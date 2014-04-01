@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>P.E.T</title></head>
+		<style type="text/css">
+			* { margin: 0; padding: 0; text-align: center !important; font-size: 11px; }
+			body, html { 
+				background-color: #111;
+			}
+			* {
+				image-rendering: optimizeSpeed;
+				image-rendering: -moz-crisp-edges;
+				image-rendering: -webkit-optimize-contrast;
+				image-rendering: optimize-contrast;
+				-ms-interpolation-mode: nearest-neighbor;
+			}
+			canvas {
+				width: 272px;
+				height: 272px;
+				margin: 0 auto;
+				background-image: url(bg.png);
+			}
+			#start {
+				position: absolute;
+				width: 294px;
+				height: 340px;
+				top: 0px;
+				left: 0px;
+				background-color: silver;
+				text-align: center;
+				font-size: 48px;
+				z-index: 3;
+				cursor: pointer;
+			}
+			#overlay {
+				position: absolute;
+				width: 294px;
+				height: 292px;
+				top: 0px;
+				left: 0px;
+				z-index: 1;
+				background-image: url(grass.png);
+				background-repeat: no-repeat;
+				background-position: 10px 18px;
+			}
+			#start:hover {
+				background-color: lightgreen;
+			}
+			#container {
+				width: 292px;
+				color: #fff;
+				border: 1px solid rgba(25,25,25,1.0);
+				text-align: left;
+				background-color: #111;
+			}
+			#loading {
+				width: 0px;
+				height: 5px;
+				background-color: green;
+			}
+			#controls {
+				width: 292px;
+			}
+			#left,#right {
+				display: none;
+			}
+			input { padding: 2px 4px 2px 4px; }
+		</style>                 
+	</head>
+	<body>
+		<div id="start">
+			<br /><br />START!
+		</div>
+		<div id="overlay"></div>
+		<div id="container">
+			<div id="loading"></div>
+			Health: <span id="health"></span> Hunger: <span id="hunger"></span> Mood: <span id="mood"></span> Energy: <span id="energy"></span><!-- Exp: <span id="xp"></span>--><br />
+			<canvas id="pet" width="272" height="272"></canvas>
+			<br />
+		</div>
+		<div id="controls">
+			<input type="button" value="Feed" id="feed" />
+			<input type="button" value="Sleep" id="sleep" />
+			<input type="button" value="Play" id="play" />
+			<input type="button" value="Clean" id="clean" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" value="Reset" id="reset" /><br />
+			<input type="button" value="Left" id="left" />
+			<input type="button" value="Right" id="right" />
+		</div>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="anims.js"></script>
+		<script type="text/javascript" src="items.js"></script>
+		<script type="text/javascript" src="engine.js"></script>
+		<script type="text/javascript" src="events.js"></script>
+	</body>
+</html>
